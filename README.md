@@ -25,19 +25,6 @@ CSS3 – Styling and layout
 
 JavaScript (Vanilla) – Section switching and smooth effects
 
-🚀 How to Use
-
-Clone the repository:
-
-git clone https://github.com/your-username/ardaa-cafe.git
-
-
-Open the project folder:
-
-cd ardaa-cafe
-
-
-Run the site by opening index.html in your browser.
 
 📸 Screenshots
 
