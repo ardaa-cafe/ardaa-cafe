@@ -1,16 +1,61 @@
-## Hi there 👋
+☕ Ardaa Cafe Website
 
-<!--
-**ardaa-cafe/ardaa-cafe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to the Ardaa Cafe Website Project!
+This is a modern, single-page website designed for Ardaa Cafe, built using HTML, CSS, and JavaScript. The site is simple, lightweight, and mobile-friendly.
 
-Here are some ideas to get you started:
+📌 Features
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+🏠 Home Page: Introduction to Ardaa Cafe and available food categories.
+
+🍽 Menu Page: Food & drink items with pictures and WhatsApp order buttons.
+
+📞 Contact Page: Direct WhatsApp ordering or inquiries.
+
+🎨 Modern UI: Brown & black theme with smooth hover effects.
+
+🌐 One-page navigation with smooth transitions.
+
+📱 WhatsApp integration for easy ordering (+252637762739).
+
+🛠️ Technologies Used
+
+HTML5 – Structure
+
+CSS3 – Styling and layout
+
+JavaScript (Vanilla) – Section switching and smooth effects
+
+🚀 How to Use
+
+Clone the repository:
+
+git clone https://github.com/your-username/ardaa-cafe.git
+
+
+Open the project folder:
+
+cd ardaa-cafe
+
+
+Run the site by opening index.html in your browser.
+
+📸 Screenshots
+
+(Add screenshots of your Home, Menu, and Contact pages here to showcase the UI)
+
+📱 WhatsApp Ordering
+
+Each menu item has an Order on WhatsApp button.
+Clicking it opens a chat with Ardaa Cafe (+252637762739) and pre-fills a message about the selected item.
+
+📍 Location & Info
+
+Open Date: 20 Feb 2025
+
+Hours: 6:00 PM – 11:00 PM
+
+Location: Kasoo horjeedka madbacadda qaranka, Hargeisa, Somaliland
+
+👨‍💻 Author
+
+Designed & Developed by Fuad and abdikariim
