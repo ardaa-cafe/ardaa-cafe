@@ -91,6 +91,18 @@
 
     .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
     .hamburger div { width: 28px; height: 2px; background: white; transition: 0.3s; }
+    .nav-download {
+      background: var(--brown);
+      color: var(--white);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 12px;
+      transition: var(--transition);
+    }
+    .nav-download:hover { background: var(--accent); }
 
     /* ===== HERO ===== */
     .hero {
@@ -209,17 +221,12 @@
       .nav-links.show { left: 0; }
       .hamburger { display: flex; }
       .section-title { font-size: 2.2rem; }
-      /* Mobile-only download button: visible on small screens
-         Keeps desktop nav download untouched */
-      .mobile-download { display: block; position: fixed; left: 16px; right: 16px; bottom: 92px; z-index: 1002;
-                        background: var(--brown); color: var(--white); text-align: center; padding: 14px 16px;
-                        border-radius: 12px; font-weight: 700; box-shadow: 0 10px 30px rgba(0,0,0,0.35); text-decoration: none; }
-      /* hide nav's download link on mobile to avoid duplicate actions */
-      .nav-links a[download] { display: none; }
     }
 
-    /* Default: hide mobile-download on desktop */
-    .mobile-download { display: none; }
+    /* Make nav download smaller on narrow screens */
+    @media (max-width: 480px) {
+      .nav-download { padding: 6px 10px; font-size: 0.85rem; margin-left: 8px; }
+    }
   </style>
 </head>
 <body>
@@ -235,9 +242,10 @@
     <a href="#menu" data-en="Menu" data-so="Cuntooyinka">Menu</a>
     <a href="#about" data-en="About" data-so="Nagu Saabsan">About</a>
     <a href="#contact" data-en="Order" data-so="Dalbo">Order</a>
-    <a href="app.apk" download class="btn-primary" style="padding:10px 16px; font-size:0.8rem; border-radius:8px; text-transform:none; margin-left:8px;">Download App</a>
     <button id="langToggle">SO</button>
   </div>
+
+  <a href="app.apk" download class="nav-download">Download App</a>
 
   <div class="hamburger" id="hamburger">
     <div></div><div></div><div></div>
@@ -353,8 +361,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </div>
 
-<!-- Mobile-only download button (large touch target). Visible only on small screens. -->
-<a href="app.apk" download class="mobile-download" aria-label="Download app">Download App</a>
+<!-- Mobile download removed; single nav button now adapts size via CSS -->
 
 <script>
   const phoneNumber = "+252637762739";
