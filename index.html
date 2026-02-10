@@ -210,46 +210,58 @@
     }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 420px) {
-      .nav-download {
-        height: 28px;
-        min-width: 56px;
-        max-width: 100px;
-        font-size: 0.6rem;
-        padding-inline: 6px;
-        border-radius: 6px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        padding-top: 2px;
-      }
+    @media (max-width: 992px) {
+      .about-container { grid-template-columns: 1fr; }
+      nav { padding: 15px 5%; }
     }
+    @media (max-width: 768px) {
+      .nav-links { 
+        position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px);
+        background: var(--dark); flex-direction: column; padding: 50px; transition: 0.5s;
+      }
+      .nav-links.show { left: 0; }
+      .hamburger { display: flex; }
       .section-title { font-size: 2.2rem; }
-    
+    }
 
-    /* Make nav download smaller on narrow screens and center it in the top bar */
-    @media (max-width: 568px) {
+    /* Make nav download smaller on narrow screens and show as floating button */
+    @media (max-width: 480px) {
       .nav-download {
-        display: inline-flex;
+        display: inline-block;
+        position: fixed;
+        bottom: 110px; /* sits above WhatsApp button */
+        right: 20px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        margin-left: 0;
+        border-radius: 12px;
+        z-index: 1002;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        background: var(--brown);
+      }
+      .nav-download:hover { background: var(--accent); transform: translateY(-2px); }
+    }
+    /* Floating mobile download button (visible only on mobile) */
+    .mobile-download-floating { display: none; }
+    @media (max-width: 768px) {
+      .mobile-download-floating {
+        display: flex;
+        position: fixed;
+        bottom: 170px; /* above other floating UI */
+        right: 20px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--dark);
         align-items: center;
         justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 6px 8px;
-        height: 36px;
-        font-size: 0.78rem;
-        border-radius: 8px;
-        min-width: 96px;
-        max-width: 160px;
-        white-space: nowrap;
-        text-align: center;
-        line-height: 1;
-        z-index: 1002;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.18);
-        background: var(--brown);
-        padding-inline: 10px;
+        z-index: 1003;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+        text-decoration: none;
+        font-size: 20px;
       }
-      .nav-download:hover { background: var(--accent); }
+      .mobile-download-floating:active { transform: translateY(1px); }
     }
   </style>
 </head>
@@ -269,7 +281,7 @@
     <button id="langToggle">SO</button>
   </div>
 
-  <a href="https://github.com/<user>/<repo>/releases/download/v1.0/app.apk" class="nav-download" target="_blank" rel="noopener">Download</a>
+  <a href="https://github.com/<user>/<repo>/releases/download/v1.0/app.apk" class="nav-download" target="_blank" rel="noopener">Download App</a>
 
   <div class="hamburger" id="hamburger">
     <div></div><div></div><div></div>
@@ -385,7 +397,8 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </div>
 
-<!-- Mobile download now appears centered in the top nav on mobile -->
+<!-- Mobile download: small floating button for mobile users -->
+<a href="manifest.json" download class="mobile-download-floating" aria-label="Download site manifest" title="Download site manifest">⬇</a>
 
 <script>
   const phoneNumber = "+252637762739";
